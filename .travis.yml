@@ -1,6 +1,6 @@
 sudo: required
 services:
-  - dockerfile
+  - docker
 
 before_install:
   - docker build -t preeti/react-test -f ./client/Dockerfile.dev ./client
