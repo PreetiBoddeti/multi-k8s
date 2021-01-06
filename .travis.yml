@@ -3,20 +3,20 @@ services:
   - docker
 
 before_install:
-  - docker build -t preeti/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t preetiprakash/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true preeti/react-test npm test -- --coverage
+  - docker run -e CI=true preetiprakash/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t preeti/multi-client ./client
-  - docker build -t preeti/multi-nginx ./nginx
-  - docker build -t preeti/multi-server ./server
-  - docker build -t preeti/multi-worker ./worker
+  - docker build -t preetiprakash/multi-client ./client
+  - docker build -t preetiprakash/multi-nginx ./nginx
+  - docker build -t preetiprakash/multi-server ./server
+  - docker build -t preetiprakash/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push preeti/multi-client
-  - docker push preeti/multi-nginx
-  - docker push preeti/multi-server
-  - docker push preeti/multi-worker
+  - docker push preetiprakash/multi-client
+  - docker push preetiprakash/multi-nginx
+  - docker push preetiprakash/multi-server
+  - docker push preetiprakash/multi-worker
