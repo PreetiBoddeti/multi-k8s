@@ -21,12 +21,13 @@ after_success:
   - docker push preetiprakash/multi-server
   - docker push preetiprakash/multi-worker
 
+#deployment
 deploy:
   provider: elasticbeanstalk
   region: 'us-east-2'
   app: 'multi-docker'
   env: 'MultiDocker-env'
-  bucket_name: 'elasticbeanstalk-us-east-2-648145344610'
+  bucket_name: 'elasticbeanstalk-us-east-2-648145344610'    
   bucket_path: 'docker-multi'
   on:
     branch: master
