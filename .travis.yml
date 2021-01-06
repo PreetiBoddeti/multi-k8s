@@ -19,4 +19,4 @@ after_success:
   - docker push preeti/multi-client
   - docker push preeti/multi-nginx
   - docker push preeti/multi-server
-  - docker push preeti/multi-worke
+  - docker push preeti/multi-worker
