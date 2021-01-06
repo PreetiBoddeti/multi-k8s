@@ -21,7 +21,7 @@ after_success:
   - docker push preetiprakash/multi-server
   - docker push preetiprakash/multi-worker
 
-
+#deployment
 deploy:
   provider: elasticbeanstalk
   region: 'us-east-2'
